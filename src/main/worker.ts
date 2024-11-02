@@ -129,7 +129,7 @@ async function axiosDlOne(articleInfo: ArticleInfo, reCall = false) {
       return;
     }
   }
-
+  articleInfo.contentUrl = articleInfo.contentUrl.replace(/&amp;/g, '&');
   const gzhInfo = articleInfo.gzhInfo;
   await axios
     .get(articleInfo.contentUrl, {
