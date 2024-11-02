@@ -748,7 +748,7 @@ async function downloadImgToHtml($, savePath: string, tmpPath: string, articleIn
       imgCount++;
       const tmpFileName = `${md5(fileUrl)}.${fileSuf}`;
       let timestamp = Date.now();
-      const fileName = `${i}.${timestamp}.${fileSuf}`;
+      const fileName = `${i}-${timestamp}.${fileSuf}`;
       const dlPromise = FileUtil.downloadFile(fileUrl, tmpPath, tmpFileName).then((_fileName) => {
         // 图片下载完成之，将图片从缓存文件夹复制到需要保存的文件夹
         $ele.attr('src', path.join('img', fileName).replaceAll('\\', '/'));
